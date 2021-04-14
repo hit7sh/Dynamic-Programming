@@ -59,7 +59,7 @@ ll f(int idx, ll d, bool c) {
 	if (idx == n - 1) {
 		ll ans = 0;
 		for (int i = 0; i <= ub; i++)
-			ans += i % D == d;
+			ans += (D + d - i % D) % D == 0;
 		return ans;
 	}
 	ll& ans = dp[idx][d][c] = 0;
